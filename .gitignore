@@ -24,3 +24,6 @@ yarn-error*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# git
+.env

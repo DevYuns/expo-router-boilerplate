@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import type {ConfigContext, ExpoConfig} from '@expo/config';
 
 export default ({config}: ConfigContext): ExpoConfig => ({
@@ -15,14 +16,20 @@ export default ({config}: ConfigContext): ExpoConfig => ({
     resizeMode: 'contain',
     backgroundColor: '#ffffff',
   },
-  web: {
-    bundler: 'metro',
+  extra: {
+    SUPABASE_URL: process.env.SUPABASE_URL,
+    SUPABASE_ANON_KEY: process.env.SUPABASE_ANON_KEY,
+    SUPABASE_SERVICE_KEY: process.env.SUPABASE_SERVICE_KEY,
   },
   updates: {
     fallbackToCacheTimeout: 0,
   },
   assetBundlePatterns: ['**/*'],
   userInterfaceStyle: 'automatic',
+  scheme: '',
+  web: {
+    bundler: 'metro',
+  },
   ios: {
     supportsTablet: true,
     infoPlist: {
