@@ -3,6 +3,7 @@ import React from 'react';
 import {DoobooProvider} from 'dooboo-ui';
 import type {ThemeType} from 'dooboo-ui';
 import {theme} from '../theme';
+import {RecoilRoot} from 'recoil';
 
 interface Props {
   initialThemeType?: ThemeType;
@@ -15,14 +16,16 @@ const RootProvider = ({
   children,
 }: Props): React.ReactElement => {
   return (
-    <DoobooProvider
-      themeConfig={{
-        initialThemeType: initialThemeType ?? 'light',
-        customTheme: theme,
-      }}
-    >
-      <AppProvider>{children}</AppProvider>
-    </DoobooProvider>
+    <RecoilRoot>
+      <DoobooProvider
+        themeConfig={{
+          initialThemeType: initialThemeType ?? 'light',
+          customTheme: theme,
+        }}
+      >
+        <AppProvider>{children}</AppProvider>
+      </DoobooProvider>
+    </RecoilRoot>
   );
 };
 

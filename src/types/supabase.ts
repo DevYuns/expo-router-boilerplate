@@ -11,31 +11,28 @@ export interface Database {
     Tables: {
       todo: {
         Row: {
-          checked: boolean;
-          content: string | null;
-          createdAt: string;
-          deletedAt: string | null;
-          id: number;
-          title: string | null;
-          updatedAt: string;
+          completed: boolean | null;
+          created_at: string | null;
+          deleted_at: string | null;
+          id: string;
+          title: string;
+          updated_at: string | null;
         };
         Insert: {
-          checked?: boolean;
-          content?: string | null;
-          createdAt?: string;
-          deletedAt?: string | null;
-          id?: number;
-          title?: string | null;
-          updatedAt: string;
+          completed?: boolean | null;
+          created_at?: string | null;
+          deleted_at?: string | null;
+          id?: string;
+          title: string;
+          updated_at?: string | null;
         };
         Update: {
-          checked?: boolean;
-          content?: string | null;
-          createdAt?: string;
-          deletedAt?: string | null;
-          id?: number;
-          title?: string | null;
-          updatedAt?: string;
+          completed?: boolean | null;
+          created_at?: string | null;
+          deleted_at?: string | null;
+          id?: string;
+          title?: string;
+          updated_at?: string | null;
         };
       };
     };
