@@ -20,7 +20,7 @@ export const todoIdsRecoil = atom<string[]>({
   }),
 });
 
-export const todosRecoil = atomFamily<Data | null, {todoId: string}>({
+export const todoRecoil = atomFamily<Data | null, {todoId: string}>({
   key: 'todoRecoil',
   default: async ({todoId}) => {
     const {data, error} = await supabase

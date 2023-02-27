@@ -5,7 +5,7 @@ import type {ReactElement} from 'react';
 import {Suspense, useState, memo} from 'react';
 import {Pressable, ScrollView, Text, View} from 'react-native';
 import {useRecoilState, useRecoilValue, useSetRecoilState} from 'recoil';
-import {todoIdsRecoil, todosRecoil} from '../src/recoils/todoRecoil';
+import {todoIdsRecoil, todoRecoil} from '../src/recoils/todoRecoil';
 import {supabase} from '../src/supabase';
 
 const Container = styled.View`
@@ -38,7 +38,7 @@ type Props = {
 };
 
 function Todo({id}: Props): ReactElement {
-  const [todo, setTodo] = useRecoilState(todosRecoil({todoId: id}));
+  const [todo, setTodo] = useRecoilState(todoRecoil({todoId: id}));
   const setTodoIds = useSetRecoilState(todoIdsRecoil);
 
   const [editing, setEditing] = useState(false);
