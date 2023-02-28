@@ -26,7 +26,7 @@ export default ({config}: ConfigContext): ExpoConfig => ({
   },
   assetBundlePatterns: ['**/*'],
   userInterfaceStyle: 'automatic',
-  scheme: '',
+  scheme: 'exporouterexample',
   web: {
     bundler: 'metro',
   },
